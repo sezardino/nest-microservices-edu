@@ -66,16 +66,23 @@
         "passWithNoTests": true
       }
     },
-    "db-types": {
+    "db-generate": {
       "command": "prisma generate",
       "options": {
-        "cwd": "apps/auth"
+        "cwd": "{projectRoot}",
+        "input": ["prisma/schema.prisma"]
       }
     },
     "db-migrate": {
       "command": "prisma migrate dev",
       "options": {
-        "cwd": "apps/auth"
+        "cwd": "{projectRoot}"
+      }
+    },
+    "db-studio": {
+      "command": "prisma studio",
+      "options": {
+        "cwd": "{projectRoot}"
       }
     }
   }

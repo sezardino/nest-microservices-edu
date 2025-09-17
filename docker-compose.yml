@@ -4,5 +4,5 @@ services:
     ports:
       - 5432:5432
     environment:
-      POSTGRES_USER: auth-user
+      POSTGRES_USER: auth-postgres
       POSTGRES_PASSWORD: auth-password
