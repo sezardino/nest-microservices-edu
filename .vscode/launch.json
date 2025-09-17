@@ -4,15 +4,21 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Debug auth with Nx",
+      "name": "Debug @nest-microservices-edu/auth with Nx",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["nx", "serve", "auth"],
+      "runtimeArgs": [
+        "nx",
+        "serve",
+        "@nest-microservices-edu/auth"
+      ],
       "env": {
         "NODE_OPTIONS": "--inspect=9229"
       },
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
-      "skipFiles": ["<node_internals>/**"],
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
       "sourceMaps": true,
       "outFiles": [
         "${workspaceFolder}/apps/auth/dist/**/*.(m|c|)js",
