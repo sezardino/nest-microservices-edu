@@ -1,0 +1,8 @@
+services:
+  auth-postgres:
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: auth-user
+      POSTGRES_PASSWORD: auth-password
