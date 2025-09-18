@@ -8,7 +8,7 @@ async function bootstrap() {
 
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
 
-  const port = app.get(ConfigService).getOrThrow('AUTH_PORT');
+  const port = app.get(ConfigService).get<number>('AUTH_PORT');
   await app.listen(port);
 }
 
