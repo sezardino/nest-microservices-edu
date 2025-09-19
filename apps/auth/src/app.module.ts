@@ -1,3 +1,4 @@
+import { GqlContext } from '@nest-microservices-edu/nestjs';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
@@ -15,6 +16,7 @@ import { UserModule } from './modules/user/user.module';
       driver: ApolloDriver,
       autoSchemaFile: true,
       playground: true,
+      context: ({ req, res }): GqlContext => ({ req, res }),
     }),
     UserModule,
     AuthModule,
