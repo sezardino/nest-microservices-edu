@@ -6,7 +6,7 @@
   "tags": [],
   "targets": {
     "build": {
-      "dependsOn": ["db-generate"],
+      "dependsOn": ["db-generate", "generate-ts-proto"],
       "executor": "nx:run-commands",
       "options": {
         "command": "webpack-cli build",
@@ -69,6 +69,7 @@
     },
     "db-generate": {
       "command": "prisma generate",
+      "cache": true,
       "options": {
         "cwd": "{projectRoot}",
         "input": ["prisma/schema.prisma"]
@@ -85,6 +86,10 @@
       "options": {
         "cwd": "{projectRoot}"
       }
+    },
+    "generate-ts-proto": {
+      "command": "nx generate-ts-proto",
+      "cache": true
     }
   }
 }
